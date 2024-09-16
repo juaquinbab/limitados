@@ -112,8 +112,8 @@ client.on('message', async (message) => {
     
     client.sendMessage(message.from, '¡Hola! Buenos días.\n\nEspero que estés muy bien. 😊\n\nEstamos emocionados de anunciar una promoción especial para la reintegración de nuestros clientes más antiguos. ¡Queremos celebrar contigo!\n\nEscríbenos a nuestra línea de WhatsApp principal y obtén un 30% de descuento en todas las plataformas. ¡No te lo pierdas!\n\n\n¡Te esperamos con mucho gusto!\n\n573108146401\n\n❤️📲 wa.link/i4c39y');
     
-    setInterval(() => {
-      client.sendMessage(message.from, mediaFilejpg)
+    setTimeout(() => {
+      client.sendMessage(message.from, mediaFilejpg);
     }, 2000);
 
 
