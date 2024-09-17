@@ -79,7 +79,7 @@ client.on('authenticated', (session) => {
 
 
 
-  // const mediaFilemp3 = MessageMedia.fromFilePath(`./public/media/${'image.mp3'}`)
+   const mediaFilemp3 = MessageMedia.fromFilePath(`./public/media/${'1.mp3'}`)
   // const mediaFilemp4 = MessageMedia.fromFilePath(`./public/media/${'image.mp4'}`)
   const mediaFilejpg = MessageMedia.fromFilePath(`./public/media/${'1.jpeg'}`)
 
@@ -110,12 +110,14 @@ client.on('message', async (message) => {
   // Este codigo verifica que ya se envio el mensaje de bienvenida
   if (!registro[message.from.toString()] && !message.from.toString().includes('@g.us') && !message.from.toString().includes('@g.us:')  ) {
     
-    client.sendMessage(message.from, '¡Hola! Buenos días.\n\nEspero que estés muy bien. 😊\n\nEstamos emocionados de anunciar una promoción especial para la reintegración de nuestros clientes más antiguos. ¡Queremos celebrar contigo!\n\nEscríbenos a nuestra línea de WhatsApp principal y obtén un 30% de descuento en todas las plataformas. ¡No te lo pierdas!\n\n\n¡Te esperamos con mucho gusto!\n\n573108146401\n\n❤️📲 wa.link/i4c39y');
+    
+    client.sendMessage(message.from, mediaFilejpg);
     
     setTimeout(() => {
-      client.sendMessage(message.from, mediaFilejpg);
+      client.sendMessage(message.from, '¡Hola! Buenos días.\n\nEspero que estés muy bien. 😊\n\nEstamos emocionados de anunciar una promoción especial para la reintegración de nuestros clientes más antiguos. ¡Queremos celebrar contigo!\n\nEscríbenos a nuestra línea de WhatsApp principal y obtén un 30% de descuento en todas las plataformas. ¡No te lo pierdas!\n\n\n¡Te esperamos con mucho gusto!\n\n573108146401\n\n❤️📲 wa.link/i4c39y');
     }, 2000);
 
+    client.sendMessage(message.from, mediaFilemp3 ) 
 
     registro[message.from] = { etapa: 0, numeroDocumento: '' };
     // registro[message.from] = true; // Register the phone number
